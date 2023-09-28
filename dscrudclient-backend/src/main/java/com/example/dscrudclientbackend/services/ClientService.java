@@ -34,6 +34,7 @@ public class ClientService {
         return new ClientDTO(clientEntity);
     }
 
+    @Transactional
     public ClientDTO insert(ClientDTO clientDTO) {
         Client clientEntity = new Client();
         clientEntity.setName(clientDTO.getName());
@@ -45,6 +46,7 @@ public class ClientService {
         return new ClientDTO(clientEntity);
     }
 
+    @Transactional
     public ClientDTO update(Long id, ClientDTO clientDTO) {
         try {
             Client clientEntity = clientRepository.getReferenceById(id);
